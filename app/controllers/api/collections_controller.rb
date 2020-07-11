@@ -9,7 +9,7 @@ class Api::CollectionsController < ApplicationController
     if @collection.save
       render json: @collection
     else
-      render json: {errors: @collection.errors}
+      render json: {errors: @collection.errors}, status: :unprocessable_entity
     end
   end
 
